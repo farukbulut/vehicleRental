@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Rental {
+public class Rental extends BaseModel {
     private int userId;
     private int vehicleId;
     private LocalDateTime startDate;

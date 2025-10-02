@@ -1,17 +1,34 @@
 package com.carrental;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import com.carrental.ui.MenuManager;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+/**
+ * Main entry point for the Vehicle Rental Application
+ * 
+ * This application is a terminal-based vehicle rental system that implements:
+ * - Layered architecture (Model, DAO, Service, UI)
+ * - User authentication with SHA-256 password hashing
+ * - Role-based access control (ADMIN, CORPORATE, INDIVIDUAL)
+ * - Vehicle management (CRUD operations)
+ * - Rental management with transaction support
+ * - Business rules validation
+ * - Deposit management
+ * 
+ * @author Vehicle Rental Team
+ * @version 1.0
+ */
+public class Main {
+    
+    public static void main(String[] args) {
+        try {
+            // Initialize and start the menu system
+            MenuManager menuManager = new MenuManager();
+            menuManager.start();
+            
+        } catch (Exception e) {
+            System.err.println("Uygulama başlatılırken bir hata oluştu: " + e.getMessage());
+            System.err.println("Lütfen veritabanı bağlantınızı kontrol edin.");
+            e.printStackTrace();
         }
     }
 }
